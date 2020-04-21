@@ -1,0 +1,32 @@
+<template>
+	<view>
+		
+		hello,test
+		<div @click="test">
+			<text>点击页面发送数据</text>
+		</div>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			test(e) {
+				uni.$emit('page-popup', {  
+				    title: '我是title123456',  
+				    content: '我是content'  
+				});
+			}
+		}
+	}
+</script>
+
+
+<style>
+
+</style>
