@@ -243,7 +243,7 @@ var render = function() {
         }
       }
     },
-    [_vm._v("\n\thello!!!\n")]
+    [_vm._v("\n\t微信支付\n")]
   )
 }
 var recyclableRender = false
