@@ -1,6 +1,9 @@
 {
 	"pages": [
-
+		{
+		    "path" : "pages/test/test",
+		    "style" : {}
+		},
 		{
 			"path": "pages/index/index",
 			"style": {
@@ -177,6 +180,7 @@
 				"navigationBarTitleText": "商品列表"
 			}
         }
+       
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
