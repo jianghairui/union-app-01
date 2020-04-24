@@ -235,15 +235,34 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-uni-view",
-    {
-      attrs: { _i: 0 },
-      on: {
-        click: function($event) {
-          return _vm.$handleViewEvent($event)
-        }
-      }
-    },
-    [_vm._v("\n\t微信支付\n")]
+    { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
+    [
+      _c(
+        "v-uni-button",
+        {
+          attrs: { type: "primary", loading: _vm._$g(1, "a-loading"), _i: 1 },
+          on: {
+            click: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
+          }
+        },
+        [_vm._v("微信支付")]
+      ),
+      _c(
+        "v-uni-button",
+        {
+          attrs: { type: "warn", _i: 2 },
+          on: {
+            click: function($event) {
+              return _vm.$handleViewEvent($event)
+            }
+          }
+        },
+        [_vm._v("停止转动")]
+      )
+    ],
+    1
   )
 }
 var recyclableRender = false
