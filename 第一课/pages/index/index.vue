@@ -10,6 +10,9 @@
 		<view class="text-area">
 			<text class="title">{{content3}}</text>
 		</view>
+		<view class="text-area">
+			<text class="title">{{content4}}</text>
+		</view>
 	</view>
 </template>
 
@@ -20,7 +23,8 @@
 				title: 'Hello',//
 				content1: '大风起兮云飞扬',
 				content2: '安得猛士兮守四方',
-				content3: '他日若遂凌云志'
+				content3: '他日若遂凌云志',
+				content4: '敢笑黄巢不丈夫',
 			}
 		},
 		onLoad() {
