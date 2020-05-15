@@ -1,15 +1,6 @@
 <template>
 	<view class="content">
-		<image class="img" src="/static/op.gif" ></image>
-		<view class="text-area">
-			<text class="title">{{content1}}</text>
-		</view>
-		<view class="text-area">
-			<text class="title">{{content2}}</text>
-		</view>
-		<view class="text-area">
-			<text class="title">{{content3}}</text>
-		</view>
+		<image class="img" src="/static/smile.gif" ></image>
 	</view>
 </template>
 
@@ -50,17 +41,9 @@
 		justify-content: center;
 	}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-	
 	.img {
 		width: 750rpx;
+		height: 562rpx;
 	}
 
 	.text-area {

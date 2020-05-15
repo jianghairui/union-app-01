@@ -9,7 +9,19 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "index"
+			}
+		},
+		{
+			"path": "pages/cart/cart",
+			"style": {
+				"navigationBarTitleText": "cart"
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "my"
 			}
 		}
 	    
@@ -19,5 +31,35 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#1296DB",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/tabbar/index0.png",
+	        "selectedIconPath": "static/tabbar/index1.png",
+	        "text": "首页"
+	    }, {
+	        "pagePath": "pages/test/test",
+	        "iconPath": "static/tabbar/cate0.png",
+	        "selectedIconPath": "static/tabbar/cate1.png",
+	        "text": "分类"
+	    },
+		{
+		    "pagePath": "pages/cart/cart",
+		    "iconPath": "static/tabbar/cart0.png",
+		    "selectedIconPath": "static/tabbar/cart1.png",
+		    "text": "购物车"
+		},
+		{
+		    "pagePath": "pages/my/my",
+		    "iconPath": "static/tabbar/my0.png",
+		    "selectedIconPath": "static/tabbar/my1.png",
+		    "text": "我的"
+		}]
 	}
 }
