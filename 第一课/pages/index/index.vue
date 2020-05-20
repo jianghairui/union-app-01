@@ -4,14 +4,8 @@
 		<view class="text-area">
 			<text class="title">{{content1}}</text>
 		</view>
-		<view class="text-area">
-			<text class="title">{{content2}}</text>
-		</view>
-		<view class="text-area">
-			<text class="title">{{content3}}</text>
-		</view>
-		<view class="text-area">
-			<text class="title">{{content4}}</text>
+		<view>
+			<button type="primary" :loading="loading" @click="wxpay">支付测试</button>
 		</view>
 	</view>
 </template>
@@ -21,10 +15,8 @@
 		data() {
 			return {
 				title: 'Hello',//
-				content1: '大风起兮云飞扬',
-				content2: '安得猛士兮守四方',
-				content3: '他日若遂凌云志',
-				content4: '敢笑黄巢不丈夫',
+				content1: '大风起兮云飞扬,安得猛士兮守四方',
+				loading: false,
 			}
 		},
 		onLoad() {
@@ -41,7 +33,46 @@
 			}
 		},
 		methods: {
-
+			wxpay(e) {
+				
+				uni.request({
+				    url: 'https://shop.bwg.art/api/diyike/wxpay', //仅为示例，并非真实接口地址。
+					method: 'POST',
+					withCredentials: true,
+				    data: {
+				        username: 'uni',
+				        password: 'request'
+				    },
+				    success: (res) => {
+				        // console.log(JSON.toString(res.data));
+						var orderInfo = JSON.stringify(res.data.data);
+						console.log(orderInfo);
+						return;
+						if(res.data.code == 1) {
+							uni.requestPayment({
+							    provider: 'wxpay',
+							    orderInfo: orderInfo, //微信、支付宝订单数据
+							    success: function (res) {
+									uni.showModal({
+									    content: '支付成功'
+									})
+							    },
+							    fail: function (err) {
+									uni.showModal({
+									    content: 'fail:' + JSON.stringify(err)
+									})
+							    }
+							});
+						}else {
+							uni.showModal({
+							    content: orderInfo
+							})
+						}
+				        
+				    }
+				});
+				
+			}
 		}
 	}
 </script>

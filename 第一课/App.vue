@@ -2,8 +2,8 @@
 	export default {
 		onLaunch: function() {
 			uni.$on('page-popup', (data) => {
-			    console.log('标题：' + data.title)
-			    console.log('内容：' + data.content)
+			    // console.log('标题：' + data.title)
+			    // console.log('内容：' + data.content)
 			})
 			console.log('App Launch')
 		},
