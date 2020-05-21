@@ -12,13 +12,12 @@
 
 <script>
 	// #ifdef APP-PLUS
-	const websiteUrl = 'https://shop.bwg.art';	
+	const websiteUrl = 'https://shop.bwg.art';
 	// #endif
 	// #ifndef APP-PLUS
-	const websiteUrl = '';	
+	const websiteUrl = '';
 	// #endif
-	
-	
+
 	export default {
 		data() {
 			return {
@@ -42,8 +41,9 @@
 		},
 		methods: {
 			wxpay(e) {
+				
 				uni.request({
-				    url: websiteUrl + '/api/diyike/wxpay', //仅为示例，并非真实接口地址。
+				    url: 'https://shop.bwg.art/api/diyike/wxpay', //仅为示例，并非真实接口地址。
 					method: 'POST',
 					withCredentials: true,
 				    data: {
@@ -53,7 +53,8 @@
 				    success: (res) => {
 				        // console.log(JSON.toString(res.data));
 						var orderInfo = JSON.stringify(res.data.data);
-						// console.log(orderInfo);
+						console.log(orderInfo);
+						// return;
 						if(res.data.code == 1) {
 							uni.requestPayment({
 							    provider: 'wxpay',
@@ -64,10 +65,10 @@
 									})
 							    },
 							    fail: function (err) {
-									console.log(err)
-									// uni.showModal({
-									//     content: 'fail:' + JSON.stringify(err)
-									// })
+									console.log(err);
+									uni.showModal({
+									    content: 'fail:' + JSON.stringify(err)
+									})
 							    }
 							});
 						}else {
@@ -76,10 +77,7 @@
 							})
 						}
 				        
-				    },
-					fail: (res) => {
-						console.log(res)
-					}
+				    }
 				});
 				
 			}

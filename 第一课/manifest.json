@@ -138,18 +138,18 @@
     "mp-toutiao" : {
         "usingComponents" : true
     },
-	"h5" : {
-	        "devServer" : {
-	            "port" : 8080,
-	            "disableHostCheck" : true,
-	            "proxy" : {
-	                "/api" : {
-	                    "target" : "https://shop.bwg.art",
-	                    "changeOrigin" : true,
-	                    "secure" : true
-	                }
-	            }
-	        },
-	        "domain" : "shop.bwg.art"
-	    }
+    "h5" : {
+        "devServer" : {
+            "port" : 8080,
+            "disableHostCheck" : true,
+            "proxy" : {
+                "/api" : {
+                    "target" : "https://shop.bwg.art",
+                    "changeOrigin" : true,
+                    "secure" : true
+                }
+            }
+        },
+        "domain" : "shop.bwg.art"
+    }
 }
