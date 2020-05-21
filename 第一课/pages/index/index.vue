@@ -47,7 +47,7 @@
 				        // console.log(JSON.toString(res.data));
 						var orderInfo = JSON.stringify(res.data.data);
 						console.log(orderInfo);
-						return;
+						// return;
 						if(res.data.code == 1) {
 							uni.requestPayment({
 							    provider: 'wxpay',
