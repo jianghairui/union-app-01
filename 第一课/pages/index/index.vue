@@ -1,6 +1,8 @@
 <template>
 	<view class="content">
-		<image class="img" src="/static/op.gif" ></image>
+		<view class="lunbo">
+			<image class="img" src="/static/doge1.png" mode="widthFix"></image>
+		</view>
 		<view class="text-area">
 			<text class="title">{{content1}}</text>
 		</view>
@@ -22,7 +24,7 @@
 		data() {
 			return {
 				title: 'Hello',//
-				content1: '大风起兮云飞扬,安得猛士兮守四方',
+				content1: '待到秋来九月八,我花开尽百花杀',
 				loading: false,
 			}
 		},
@@ -38,6 +40,12 @@
 			       console.log('运行在开发者工具上')
 			       break;
 			}
+		},
+		onHide() {
+			console.log('隐藏首页');
+		},
+		onShow() {
+			console.log('显示首页');
 		},
 		methods: {
 			wxpay(e) {
@@ -90,21 +98,14 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
+		justify-content: center;//
 	}
 	
-	.img {
-		width: 750rpx;
-	}
+	/* .lunbo {
+		width: 100%;
+	} */
+	
+	.img { width: 750rpx; }
 
 	.text-area {
 		display: flex;
@@ -115,4 +116,6 @@
 		font-size: 36rpx;
 		color: #8f8f94;
 	}
+	
+	
 </style>
