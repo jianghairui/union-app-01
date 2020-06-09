@@ -1,10 +1,7 @@
 <template>
 	<view class="content">
-		<view class="lunbo">
-			<image class="img" src="/static/doge1.png" mode="widthFix"></image>
-		</view>
-		<view class="text-area">
-			<text class="title">{{content1}}</text>
+		<view>
+			<button type="default" @click="sendSms" :disabled="disabled">{{content}}</button>
 		</view>
 		<view>
 			<button type="primary" :loading="loading" @click="wxpay">支付测试</button>
@@ -20,36 +17,28 @@
 	const websiteUrl = '';
 	// #endif
 
+	const init_seconds = 10;
+	var _self,isclick = true;
+
 	export default {
+		
 		data() {
 			return {
 				title: 'Hello',//
-				content1: '待到秋来九月八,我花开尽百花杀',
 				loading: false,
+				disabled: false,
+				second: init_seconds,
+				content: '点击发送短信'
 			}
 		},
+		
 		onLoad() {
-			switch(uni.getSystemInfoSync().platform){
-			    case 'android':
-			       console.log('运行Android上')
-			       break;
-			    case 'ios':
-			       console.log('运行iOS上')
-			       break;
-			    default:
-			       console.log('运行在开发者工具上')
-			       break;
-			}
+			_self = this;
 		},
-		onHide() {
-			console.log('隐藏首页');
-		},
-		onShow() {
-			console.log('显示首页');
-		},
+		
 		methods: {
+			
 			wxpay(e) {
-				
 				uni.request({
 				    url: websiteUrl + '/api/diyike/wxpay', //仅为示例，并非真实接口地址。
 					method: 'POST',
@@ -88,28 +77,53 @@
 				    }
 				});
 				
+			},
+			sendSms(e) {
+				
+				_self.disabled = true;
+				
+				var counter = setInterval(function() {
+					if(_self.second > 1) {
+						_self.second--;
+						_self.content = _self.second + 's后重新发送';
+					}else {
+						_self.content = '点击发送短信';
+						_self.second = init_seconds;
+						clearInterval(counter);
+						_self.disabled = false;
+					}
+				},1000);
 			}
+		},
+		onHide() {
+			console.log('隐藏首页');
+			// switch(uni.getSystemInfoSync().platform){
+			//     case 'android':
+			//        console.log('运行Android上')
+			//        break;
+			//     case 'ios':
+			//        console.log('运行iOS上')
+			//        break;
+			//     default:
+			//        console.log('运行在开发者工具上')
+			//        break;
+			// }
+		},
+		onShow() {
+			console.log('显示首页');
 		}
 	}
 </script>
 
 <style>
+	
+	button { width: 375rpx;margin-bottom: 15rpx; }
+	
 	.content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;//
-	}
-	
-	/* .lunbo {
-		width: 100%;
-	} */
-	
-	.img { width: 750rpx; }
-
-	.text-area {
-		display: flex;
-		justify-content: center;
 	}
 
 	.title {

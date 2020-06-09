@@ -1,6 +1,12 @@
 <template>
 	<view class="content">
-		<image class="img" src="/static/smile.gif" ></image>
+		<view>
+			<view v-for="(item ,index) in poem">
+				{{item}}
+			</view>
+		</view>
+		
+		<!-- <image class="img" src="/static/smile.gif" ></image> -->
 	</view>
 </template>
 
@@ -9,9 +15,11 @@
 		data() {
 			return {
 				title: 'Hello',//
-				content1: '大风起兮云飞扬',
-				content2: '安得猛士兮守四方',
-				content3: '他日若遂凌云志'
+				poem : [
+					'大风起兮云飞扬',
+					'安得猛士兮守四方',
+					'他日若遂凌云志'
+				]
 			}
 		},
 		onLoad() {
@@ -34,15 +42,5 @@
 	.img {
 		width: 750rpx;
 		height: 562rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
 	}
 </style>
