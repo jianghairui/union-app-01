@@ -232,7 +232,13 @@ var render = function() {
           ])
         }),
         1
-      )
+      ),
+      _c("v-uni-view", { class: _vm._$g(3, "c"), attrs: { _i: 3 } }, [
+        _vm._v("How are you .")
+      ]),
+      _c("v-uni-view", { class: _vm._$g(4, "c"), attrs: { _i: 4 } }, [
+        _vm._v("Fine! Thank you .")
+      ])
     ],
     1
   )
@@ -325,7 +331,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.content {\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t-webkit-flex-direction: column;\n\t        flex-direction: column;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n\t-webkit-box-pack: center;\n\t-webkit-justify-content: center;\n\t        justify-content: center;\n}\n.img {\n\twidth: 750rpx;\n\theight: 562rpx;\n}\n", ""]);
+exports.push([module.i, "\n.content {\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\t-webkit-flex-direction: column;\n\t        flex-direction: column;\n\t-webkit-box-align: center;\n\t-webkit-align-items: center;\n\t        align-items: center;\n\t-webkit-box-pack: center;\n\t-webkit-justify-content: center;\n\t        justify-content: center;\n}\n.img {\n\twidth: 750rpx;\n\theight: 562rpx;\n}\n.red {\n\tcolor: red;\n}\n.green {\n\tcolor:green;\n}\n.article {\n\tbackground-color:#C0C0C0;\n\t/* padding: 15rpx; */\n}\n\n", ""]);
 // Exports
 module.exports = exports;
 

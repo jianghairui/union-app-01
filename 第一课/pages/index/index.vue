@@ -21,7 +21,6 @@
 	var _self,isclick = true;
 
 	export default {
-		
 		data() {
 			return {
 				title: 'Hello',//

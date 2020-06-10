@@ -5,6 +5,12 @@
 				{{item}}
 			</view>
 		</view>
+		<view :class="{red:isRed}">
+			How are you .
+		</view>
+		<view :class="[isRed ? 'red' : 'green','article']">
+			Fine! Thank you .
+		</view>
 		
 		<!-- <image class="img" src="/static/smile.gif" ></image> -->
 	</view>
@@ -15,6 +21,7 @@
 		data() {
 			return {
 				title: 'Hello',//
+				isRed: true,
 				poem : [
 					'大风起兮云飞扬',
 					'安得猛士兮守四方',
@@ -43,4 +50,18 @@
 		width: 750rpx;
 		height: 562rpx;
 	}
+	
+	.red {
+		color: red;
+	}
+	
+	.green {
+		color:green;
+	}
+
+	.article {
+		background-color:#C0C0C0;
+		/* padding: 15rpx; */
+	}
+	
 </style>
