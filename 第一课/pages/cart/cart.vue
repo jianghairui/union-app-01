@@ -1,7 +1,7 @@
 <template>
 	<scroll-view class="content">
 		<view>
-			<view v-for="(item ,index) in poem" :key="index">
+			<view v-for="(item ,index) in poem" :key="index" @click="test(index)">
 				{{item}}
 			</view>
 		</view>
@@ -24,7 +24,13 @@
 				poem : [
 					'大风起兮云飞扬',
 					'安得猛士兮守四方',
-					'他日若遂凌云志'
+					'他日若遂凌云志',
+					'敢笑黄巢不丈夫',
+					'一曲肝肠断',
+					'轻羽此去莫留恋',
+					'二曲肝肠断',
+					'莫向白苹洲上独叹秋水寒',
+					'问君此去还谋定佳期'
 				]
 			}
 		},
@@ -32,7 +38,9 @@
 			 console.log('购物车onLoad');
 		},
 		methods: {
-
+			test: function(e) {
+				console.log(f);
+			}
 		}
 		
 	}
@@ -44,8 +52,8 @@
 		display: flex;
 		/* #endif */
 		flex-direction: column;
-		/* align-items: center; */
-		/* justify-content: center; */
+		align-items: center;
+		justify-content: center;
 		background-color: #FF0000;
 	}
 
