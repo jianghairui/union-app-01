@@ -1,13 +1,7 @@
 <template>
 	<scroll-view class="content">
-		<refresh @refresh="onrefresh" @pullingdown="onpullingdown" :display="refreshing ? 'show' : 'hide'">
-			<text>Refreshing ...</text>
-			<loading-indicator></loading-indicator>
-		</refresh>
-		
-		
 		<view>
-			<view v-for="(item ,index) in poem">
+			<view v-for="(item ,index) in poem" :key="index">
 				{{item}}
 			</view>
 		</view>
@@ -36,12 +30,6 @@
 		},
 		onLoad() {
 			 console.log('购物车onLoad');
-		},
-		onPullDownRefresh() {
-			console.log('下拉刷新');
-			setTimeout(function () {
-				uni.stopPullDownRefresh();
-			}, 1000);
 		},
 		methods: {
 

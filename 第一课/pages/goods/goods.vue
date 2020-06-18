@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view class="newslist" v-for="(item ,index) in newsList">
+		<view class="newslist" v-for="(item ,index) in newsList" :key="index">
 			<image class="image" :src="pic_domain+item.pic" mode="aspectFill" />
 			<view class="title">{{item.name}}</view>
 			<view class="price">￥：{{item.price}}</view>
@@ -8,11 +8,12 @@
 	</view>
 </template>
 <script>
+	
 	const pic_domain = 'https://shop.bwg.art/';
 	var _self,
 		page = 1,
 		timer = null;
-	// 定义全局参数,控制数据加载
+	// 定义全局参数,控制数据加载...
 
 	export default {
 		data() {
