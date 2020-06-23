@@ -1,7 +1,18 @@
 <template>
-	<view class="content">
-		<image class="img" src="/static/smile.gif" ></image>
-	</view>
+	<scroll-view class="content">
+		<view>
+			<view v-for="(item ,index) in poem" :key="index" @click="test(index)">
+				{{item}}
+			</view>
+		</view>
+	<!-- 	<view :class="{red:isRed}">
+			How are you .
+		</view>
+		<view :class="[isRed ? 'red' : 'green','article']">
+			Fine! Thank you .
+		</view> -->
+		<!-- <image class="img" src="/static/smile.gif" ></image> -->
+	</scroll-view>
 </template>
 
 <script>
@@ -9,50 +20,59 @@
 		data() {
 			return {
 				title: 'Hello',//
-				content1: '大风起兮云飞扬',
-				content2: '安得猛士兮守四方',
-				content3: '他日若遂凌云志'
+				isRed: true,
+				poem : [
+					'大风起兮云飞扬',
+					'安得猛士兮守四方',
+					'他日若遂凌云志',
+					'敢笑黄巢不丈夫',
+					'一曲肝肠断',
+					'轻羽此去莫留恋',
+					'二曲肝肠断',
+					'莫向白苹洲上独叹秋水寒',
+					'问君此去还谋定佳期'
+				]
 			}
 		},
 		onLoad() {
-			switch(uni.getSystemInfoSync().platform){
-			    case 'android':
-			       console.log('运行Android上')
-			       break;
-			    case 'ios':
-			       console.log('运行iOS上')
-			       break;
-			    default:
-			       console.log('运行在开发者工具上')
-			       break;
-			}
+			 console.log('购物车onLoad');
 		},
 		methods: {
-
+			test: function(e) {
+				console.log(f);
+			}
 		}
+		
 	}
 </script>
 
 <style>
 	.content {
+		/* #ifndef APP-PLUS-NVUE */
 		display: flex;
+		/* #endif */
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		background-color: #FF0000;
 	}
 
 	.img {
 		width: 750rpx;
 		height: 562rpx;
 	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
+	
+	.red {
+		color: red;
+	}
+	
+	.green {
+		color:green;
 	}
 
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+	.article {
+		background-color:#C0C0C0;
+		/* padding: 15rpx; */
 	}
+	
 </style>
