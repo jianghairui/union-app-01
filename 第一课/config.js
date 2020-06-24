@@ -4,7 +4,7 @@ let config= {
 	api_url: 'https://shop.bwg.art/',
 	// #endif
 	// #ifndef APP-PLUS
-	api_url: '12',
+	api_url: '/api',
 	// #endif
 	domain: 'shop.bwg.art'
 }

@@ -1,38 +1,43 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			"path": "pages/demo/index/index",
 			"style": {
 				"navigationBarTitleText": "首页"
 			}
 		},
 		{
-			"path": "pages/list/list",
+			"path": "pages/demo/pay/pay",
 			"style": {
-				"navigationBarTitleText": "上载下刷"
+				"navigationBarTitleText": "lesson 1"
 			}
 		},
 		{
-			"path": "pages/goods/goods",
+			"path": "pages/demo/list/list",
 			"style": {
-				"navigationBarTitleText": "商品列表",
-				"enablePullDownRefresh":true
+				"navigationBarTitleText": "lesson 2"
 			}
 		},
 		{
-			"path": "pages/cart/cart",
+			"path": "pages/demo/goods/goods",
+			"style": {
+				"navigationBarTitleText": "lesson 3"
+			}
+		},
+		{
+			"path": "pages/demo/cart/cart",
 			"style": {
 				"navigationBarTitleText": "购物车"
 			}
 		},
 		{
-			"path": "pages/test/test",
+			"path": "pages/demo/test/test",
 			"style": {
 				"navigationBarTitleText": "测试页"
 			}
 		},
 		{
-			"path": "pages/my/my",
+			"path": "pages/demo/my/my",
 			"style": {
 				"navigationBarTitleText": "我的"
 			}
@@ -52,24 +57,24 @@
 	    "borderStyle": "black",
 	    "backgroundColor": "#ffffff",
 	    "list": [{
-	        "pagePath": "pages/index/index",
+	        "pagePath": "pages/demo/index/index",
 	        "iconPath": "static/tabbar/index0.png",
 	        "selectedIconPath": "static/tabbar/index1.png",
 	        "text": "首页"
 	    }, {
-	        "pagePath": "pages/test/test",
+	        "pagePath": "pages/demo/test/test",
 	        "iconPath": "static/tabbar/cate0.png",
 	        "selectedIconPath": "static/tabbar/cate1.png",
 	        "text": "分类"
 	    },
 		{
-		    "pagePath": "pages/cart/cart",
+		    "pagePath": "pages/demo/cart/cart",
 		    "iconPath": "static/tabbar/cart0.png",
 		    "selectedIconPath": "static/tabbar/cart1.png",
 		    "text": "购物车"
 		},
 		{
-		    "pagePath": "pages/my/my",
+		    "pagePath": "pages/demo/my/my",
 		    "iconPath": "static/tabbar/my0.png",
 		    "selectedIconPath": "static/tabbar/my1.png",
 		    "text": "我的"
