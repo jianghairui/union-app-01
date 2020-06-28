@@ -1,0 +1,45 @@
+<template>
+	<scroll-view class="content" scroll-y="true">
+		<button class="btn">手机号码一键登录</button>
+		<button class="btn btn2">手机验证码或密码</button>
+	</scroll-view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				imageUl: '@/static/fox.png',
+				videoUrl: ''
+			}
+		}
+	}
+</script>
+
+<style>
+	.content {
+
+		width: 750rpx;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	.btn {
+		border: none;
+		outline: none; 
+		width: 500rpx;
+		/* background-color: #000; */
+		background-color: rgba(255, 255, 255, 0.6);
+		border-radius: 50%;
+		margin-bottom: 15px;
+	}
+
+	.btn::after {
+		border: none !important;
+	}
+
+	.btn2 {
+		background-color: rgba(255, 255, 255, 0.4);
+	}
+</style>

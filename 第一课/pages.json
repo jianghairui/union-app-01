@@ -19,9 +19,23 @@
 			}
 		},
 		{
-			"path": "pages/demo/goods/goods",
+			"path": "pages/demo/video/video",
 			"style": {
-				"navigationBarTitleText": "lesson 3"
+				"navigationBarTitleText": "lesson 3",
+				"app-plus": {  
+					"subNVues":[{  
+						"id": "popup", // 唯一标识  
+						"path": "pages/demo/video/subnvue/popup", // 页面路径  
+						/*"type": "popup",  这里不需要*/  
+						"style": {  
+							"position": "absolute",  
+							"dock": "right",  
+							"width": "100upx",  
+							"height": "150upx",  
+							"background": "transparent"  
+						}  
+					}]  
+				}  
 			}
 		},
 		{
@@ -34,6 +48,12 @@
 			"path": "pages/demo/test/test",
 			"style": {
 				"navigationBarTitleText": "测试页"
+			}
+		},
+		{
+			"path": "pages/demo/slide/slide",
+			"style": {
+				"navigationBarTitleText": "分类"
 			}
 		},
 		{
@@ -62,7 +82,7 @@
 	        "selectedIconPath": "static/tabbar/index1.png",
 	        "text": "首页"
 	    }, {
-	        "pagePath": "pages/demo/test/test",
+	        "pagePath": "pages/demo/slide/slide",
 	        "iconPath": "static/tabbar/cate0.png",
 	        "selectedIconPath": "static/tabbar/cate1.png",
 	        "text": "分类"
