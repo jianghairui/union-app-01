@@ -13,7 +13,6 @@
 			<navigator url="/pages/demo/test/test" hover-class="navigator-hover">
 				<button type="default">测试页</button>
 			</navigator>
-			
 		</view>
 	</view>
 </template>

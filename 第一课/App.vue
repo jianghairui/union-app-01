@@ -19,9 +19,4 @@
 </script>
 <style>
 	/*每个页面公共css */
-	/* #ifndef APP-PLUS-NVUE */
-	uni-page-body,#app{
-		height: 100%vh;
-	} 
-	/* #endif */
 </style>

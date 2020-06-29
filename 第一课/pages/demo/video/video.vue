@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<video id="myVideo" :src="video_url" :autoplay="autoplay" loop=true controls=false objectFit="fill"></video>
+		<video id="myVideo" :src="video_url" :autoplay="autoplay" loop=true controls=false objectFit="fill" muted=true ></video>
 	</view>
 </template>
 

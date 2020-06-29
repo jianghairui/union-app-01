@@ -1,13 +1,13 @@
 <template>
-	<mescroll-body ref="mescrollRef" @init="mescrollInit" :down="downOption" @down="downCallback" @up="upCallback">
+	<mescroll-body ref="mescrollRef" @init="mescrollInit" :down="downOption" :up="upOption" @down="downCallback" @up="upCallback">
 		<view class="notice">
-			<text>上滑加载、下拉刷新</text>
+			<text>好货精选</text>
 		</view>
 		<view class="content">
-			<view class="newslist" v-for="(item ,index) in dataList" :key="index">
+			<view class="goodslist" v-for="(item ,index) in dataList" :key="index">
 				<image class="image" :src="image_url+item.pic" mode="aspectFill" />
 				<view class="title">{{item.name}}</view>
-				<view class="price">￥：{{item.price}}</view>
+				<view class="price">￥ {{item.price}}</view>
 			</view>
 		</view>
 	</mescroll-body>
@@ -15,7 +15,7 @@
 
 <script>
 	import MescrollMixin from "@/components/mescroll-uni/mescroll-mixins.js";
-	
+	import {apiGoodsList} from "@/api/datalist.js"
 	var _self;
 	
 	export default {
@@ -25,37 +25,44 @@
 				downOption: {
 					auto: false //是否在初始化后,自动执行downCallback; 默认true
 				},
+				upOption: {
+					auto: true,
+					page: {
+						num: 0,
+						size: 10
+					}
+				},
 				image_url: '',
 				dataList: []
 			}
 		},
 		onLoad(e) {
 			_self = this;
-			_self.image_url = this.config.image_url;
-			console.log(this.config.api_url);
+			_self.image_url = this.config.image_url;//
+			// console.log(this.config.api_url);
 		},
 		methods: {
 			/*下拉刷新的回调 */
 			downCallback() {
-				//联网加载数据
-				setTimeout(function() {
-					console.log('数据获取成功')
-					// this.dataList.unshift(data[0]);
-					// this.mescroll.endSuccess();
-				},1000);
-			
+				this.dataList = [];
+				this.mescroll.resetUpScroll();
 			},
 			/*上拉加载的回调: 其中page.num:当前页 从1开始, page.size:每页数据条数,默认10 */
 			upCallback(page) {
-				this.getnewsList(page.num, page.size);
-//				this.mescroll.endBySize(curPageData.length, totalSize); //必传参数(当前页的数据个数, 总数据量)
-				
+				// console.log(page);
+				apiGoodsList(page.num,  page.size).then(data => {
+					//成功的回调,隐藏下拉刷新的状态
+					this.mescroll.endSuccess(data.length);
+					//设置列表数据
+					this.dataList = this.dataList.concat(data);
+				}).catch((e)=>{
+					//接口失败的回调,隐藏下拉刷新的状态.
+					this.mescroll.endErr();
+				})
 			},
-			getnewsList(page,perpage) { //第一次回去数据
-				if(!page) { page = 1 }
-				if(!perpage) { perpage = 10 }
+			getnewsList(page=1,perpage=10,datalist=[]) { 
 				uni.request({
-					url: this.config.api_url + '/pc/test/goodsList',
+					url: this.config.api_url + '/api/diyike/goodsList',
 					method: 'POST',
 					withCredentials: true,
 					data: {
@@ -63,7 +70,7 @@
 						perpage: perpage
 					},
 					success: (res) => {
-						this.dataList=this.dataList.concat(res.data.data);
+						this.dataList = datalist.concat(res.data.data);
 						this.mescroll.endSuccess(res.data.data.length);
 					},
 					fail: (msg) => {
@@ -78,9 +85,9 @@
 <style>
 	/*说明*/
 	.notice{
-		font-size: 30upx;
-		padding: 40upx 0;
-		border-bottom: 1upx solid #eee;
+		font-size: 30rpx;
+		padding: 40rpx 0;
+		border-bottom: 1rpx solid #eee;
 		text-align: center;
 	}
 	
@@ -92,14 +99,15 @@
 		flex-wrap: wrap;
 		/* align-items: center; */
 		/* justify-content: center; */
-		/* background: #FF0000; */
 	}
 	
-	.newslist {
+	.goodslist {
 		width: 360rpx;
 		font-size: 30rpx;
 		margin-top: 10rpx;
 		margin-left: 10rpx;
+		border-radius: 10rpx 10rpx;
+		overflow: hidden;
 		/* background: #00FF00; */
 	}
 	
@@ -120,7 +128,7 @@
 	}
 	
 	.image {
-		width: 360rpx;
+		width: 100%;
 		height: 360rpx;
 	}
 </style>

@@ -357,7 +357,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _HBu
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\nvar _default =\n{\n  data: function data() {\n    return {\n      imageUl: '@/static/fox.png',\n      videoUrl: '' };\n\n  } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvZGVtby92aWRlby9zdWJudnVlL3BvcHVwLm52dWUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFRQTtBQUNBLE1BREEsa0JBQ0E7QUFDQTtBQUNBLGlDQURBO0FBRUEsa0JBRkE7O0FBSUEsR0FOQSxFIiwiZmlsZSI6IjE4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiPHRlbXBsYXRlPlxyXG5cdDxzY3JvbGwtdmlldyBjbGFzcz1cImNvbnRlbnRcIiBzY3JvbGwteT1cInRydWVcIj5cclxuXHRcdDxidXR0b24gY2xhc3M9XCJidG5cIj7miYvmnLrlj7fnoIHkuIDplK7nmbvlvZU8L2J1dHRvbj5cclxuXHRcdDxidXR0b24gY2xhc3M9XCJidG4gYnRuMlwiPuaJi+acuumqjOivgeeggeaIluWvhueggTwvYnV0dG9uPlxyXG5cdDwvc2Nyb2xsLXZpZXc+XHJcbjwvdGVtcGxhdGU+XHJcblxyXG48c2NyaXB0PlxyXG5cdGV4cG9ydCBkZWZhdWx0IHtcclxuXHRcdGRhdGEoKSB7XHJcblx0XHRcdHJldHVybiB7XHJcblx0XHRcdFx0aW1hZ2VVbDogJ0Avc3RhdGljL2ZveC5wbmcnLFxyXG5cdFx0XHRcdHZpZGVvVXJsOiAnJ1xyXG5cdFx0XHR9XHJcblx0XHR9XHJcblx0fVxyXG48L3NjcmlwdD5cclxuXHJcbjxzdHlsZT5cclxuXHQuY29udGVudCB7XHJcblxyXG5cdFx0d2lkdGg6IDc1MHJweDtcclxuXHRcdGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblx0XHRqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuXHRcdGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMC41KTtcclxuXHR9XHJcblxyXG5cdC5idG4ge1xyXG5cdFx0Ym9yZGVyOiBub25lO1xyXG5cdFx0b3V0bGluZTogbm9uZTsgLy9cclxuXHRcdHdpZHRoOiA1MDBycHg7XHJcblx0XHQvKiBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwOyAqL1xyXG5cdFx0YmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjYpO1xyXG5cdFx0Ym9yZGVyLXJhZGl1czogNTAlO1xyXG5cdFx0bWFyZ2luLWJvdHRvbTogMTVweDtcclxuXHR9XHJcblxyXG5cdC5idG46OmFmdGVyIHtcclxuXHRcdGJvcmRlcjogbm9uZSAhaW1wb3J0YW50O1xyXG5cdH1cclxuXHJcblx0LmJ0bjIge1xyXG5cdFx0YmFja2dyb3VuZC1jb2xvcjogcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjQpO1xyXG5cdH1cclxuPC9zdHlsZT5cbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///18\n");
+eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.default = void 0; //\n//\n//\n//\n//\n//\n//\nvar _default =\n{\n  data: function data() {\n    return {\n      imageUl: '@/static/fox.png',\n      videoUrl: '' };\n\n  } };exports.default = _default;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVuaS1hcHA6Ly8vcGFnZXMvZGVtby92aWRlby9zdWJudnVlL3BvcHVwLm52dWUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFRQTtBQUNBLE1BREEsa0JBQ0E7QUFDQTtBQUNBLGlDQURBO0FBRUEsa0JBRkE7O0FBSUEsR0FOQSxFIiwiZmlsZSI6IjE4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiPHRlbXBsYXRlPlxyXG5cdDxzY3JvbGwtdmlldyBjbGFzcz1cImNvbnRlbnRcIiBzY3JvbGwteT1cInRydWVcIj5cclxuXHRcdDxidXR0b24gY2xhc3M9XCJidG5cIj7miYvmnLrlj7fnoIHkuIDplK7nmbvlvZU8L2J1dHRvbj5cclxuXHRcdDxidXR0b24gY2xhc3M9XCJidG4gYnRuMlwiPuaJi+acuumqjOivgeeggeaIluWvhueggTwvYnV0dG9uPlxyXG5cdDwvc2Nyb2xsLXZpZXc+XHJcbjwvdGVtcGxhdGU+XHJcblxyXG48c2NyaXB0PlxyXG5cdGV4cG9ydCBkZWZhdWx0IHtcclxuXHRcdGRhdGEoKSB7XHJcblx0XHRcdHJldHVybiB7XHJcblx0XHRcdFx0aW1hZ2VVbDogJ0Avc3RhdGljL2ZveC5wbmcnLFxyXG5cdFx0XHRcdHZpZGVvVXJsOiAnJ1xyXG5cdFx0XHR9XHJcblx0XHR9XHJcblx0fVxyXG48L3NjcmlwdD5cclxuXHJcbjxzdHlsZT5cclxuXHQuY29udGVudCB7XHJcblx0XHR3aWR0aDogNzUwcnB4O1xyXG5cdFx0YWxpZ24taXRlbXM6IGNlbnRlcjtcclxuXHRcdGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG5cdFx0YmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjUpO1xyXG5cdH1cclxuXHJcblx0LmJ0biB7XHJcblx0XHR3aWR0aDogNTAwcnB4O1xyXG5cdFx0LyogYmFja2dyb3VuZC1jb2xvcjogIzAwMDsgKi9cclxuXHRcdGJhY2tncm91bmQtY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMC42KTtcclxuXHRcdGJvcmRlci1yYWRpdXM6IDUwJTtcclxuXHRcdG1hcmdpbi1ib3R0b206IDE1cHg7XHJcblx0fVxyXG5cclxuXHQuYnRuMiB7XHJcblx0XHRiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNCk7XHJcblx0fVxyXG48L3N0eWxlPlxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///18\n");
 
 /***/ }),
 /* 19 */
@@ -390,13 +390,10 @@ module.exports = {
     "backgroundColor": "rgba(0,0,0,0.5)"
   },
   "btn": {
-    "border": "none",
-    "outline": "none",
     "width": "500rpx",
     "backgroundColor": "rgba(255,255,255,0.6)",
     "borderRadius": 50,
-    "marginBottom": "15",
-    "border::after": "none"
+    "marginBottom": "15"
   },
   "btn2": {
     "backgroundColor": "rgba(255,255,255,0.4)"

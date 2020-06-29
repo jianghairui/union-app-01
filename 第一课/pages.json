@@ -15,7 +15,10 @@
 		{
 			"path": "pages/demo/list/list",
 			"style": {
-				"navigationBarTitleText": "lesson 2"
+				"navigationBarTitleText": "商品列表123",
+				"app-plus": {
+					"background" : "#FF0000"
+				}
 			}
 		},
 		{

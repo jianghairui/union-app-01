@@ -1337,9 +1337,7 @@ var render = function() {
       _c(
         "v-uni-view",
         { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
-        [
-          _c("v-uni-text", { attrs: { _i: 2 } }, [_vm._v("上滑加载、下拉刷新")])
-        ],
+        [_c("v-uni-text", { attrs: { _i: 2 } }, [_vm._v("好货精选")])],
         1
       ),
       _c(
@@ -1376,7 +1374,7 @@ var render = function() {
                   staticClass: _vm._$g("7-" + $30, "sc"),
                   attrs: { _i: "7-" + $30 }
                 },
-                [_vm._v("￥：" + _vm._$g("7-" + $30, "t0-0"))]
+                [_vm._v("￥ " + _vm._$g("7-" + $30, "t0-0"))]
               )
             ],
             1
@@ -1476,7 +1474,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*说明*/\n.notice{\n\tfont-size: 30upx;\n\tpadding: 40upx 0;\n\tborder-bottom: 1upx solid #eee;\n\ttext-align: center;\n}\n.content {\n\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\n\t/* flex-direction: column; */\n\t-webkit-flex-wrap: wrap;\n\t        flex-wrap: wrap;\n\t/* align-items: center; */\n\t/* justify-content: center; */\n\t/* background: #FF0000; */\n}\n.newslist {\n\twidth: 360rpx;\n\tfont-size: 30rpx;\n\tmargin-top: 10rpx;\n\tmargin-left: 10rpx;\n\t/* background: #00FF00; */\n}\n.title {\n\t/* height: 80rpx; */\n\t/* overflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis; */\n\twidth: 100%;\n\tdisplay: -webkit-box;\n\t-webkit-box-orient: vertical;\n\t-webkit-line-clamp: 2;\n\toverflow: hidden;\n}\n.price {\n\tcolor: red;\n}\n.image {\n\twidth: 360rpx;\n\theight: 360rpx;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*说明*/\n.notice{\n\tfont-size: 30rpx;\n\tpadding: 40rpx 0;\n\tborder-bottom: 1rpx solid #eee;\n\ttext-align: center;\n}\n.content {\n\n\tdisplay: -webkit-box;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\n\t/* flex-direction: column; */\n\t-webkit-flex-wrap: wrap;\n\t        flex-wrap: wrap;\n\t/* align-items: center; */\n\t/* justify-content: center; */\n}\n.goodslist {\n\twidth: 360rpx;\n\tfont-size: 30rpx;\n\tmargin-top: 10rpx;\n\tmargin-left: 10rpx;\n\tborder-radius: 10rpx 10rpx;\n\toverflow: hidden;\n\t/* background: #00FF00; */\n}\n.title {\n\t/* height: 80rpx; */\n\t/* overflow: hidden;\n\twhite-space: nowrap;\n\ttext-overflow: ellipsis; */\n\twidth: 100%;\n\tdisplay: -webkit-box;\n\t-webkit-box-orient: vertical;\n\t-webkit-line-clamp: 2;\n\toverflow: hidden;\n}\n.price {\n\tcolor: red;\n}\n.image {\n\twidth: 100%;\n\theight: 360rpx;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -1573,6 +1571,7 @@ var render = function() {
           loop: "true",
           controls: "false",
           objectFit: "fill",
+          muted: "true",
           _i: 1
         }
       })
@@ -2803,7 +2802,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*每个页面公共css */\nuni-page-body,#app{\n\theight: 100%vh;\n}\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*每个页面公共css */\n", ""]);
 // Exports
 module.exports = exports;
 
