@@ -1,9 +1,34 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
 		{
 			"path": "pages/demo/index/index",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationBarTitleText": "博物馆商店"
+			}
+		},
+		{
+			"path": "pages/demo/cate/cate",
+			"style": {
+				"navigationBarTitleText": "分类"
+			}
+		},
+		{
+			"path": "pages/demo/cart/cart",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		},
+		{
+			"path": "pages/demo/my/my",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/demo/mynote/mynote",
+			"style": {
+				"navigationBarTitleText": "lessons"
 			}
 		},
 		{
@@ -15,9 +40,9 @@
 		{
 			"path": "pages/demo/list/list",
 			"style": {
-				"navigationBarTitleText": "商品列表123",
+				"navigationBarTitleText": "商品列表",
 				"app-plus": {
-					"background" : "#FF0000"
+					"animationType": "fade-in"
 				}
 			}
 		},
@@ -26,6 +51,7 @@
 			"style": {
 				"navigationBarTitleText": "lesson 3",
 				"app-plus": {  
+					"animationType": "fade-in",
 					"subNVues":[{  
 						"id": "popup", // 唯一标识  
 						"path": "pages/demo/video/subnvue/popup", // 页面路径  
@@ -42,9 +68,24 @@
 			}
 		},
 		{
-			"path": "pages/demo/cart/cart",
+			"path": "pages/demo/login/login",
 			"style": {
-				"navigationBarTitleText": "购物车"
+				"navigationBarTitleText": "账号登录",
+				"app-plus": {  
+					"animationType": "fade-in",
+					"subNVues":[{  
+						"id": "popup", // 唯一标识  
+						"path": "pages/demo/login/subnvue/popup", // 页面路径  
+						/*"type": "popup",  这里不需要*/  
+						"style": {  
+							"position": "absolute",  
+							"dock": "right",  
+							"width": "100upx",  
+							"height": "150upx",  
+							"background": "transparent"  
+						}  
+					}]  
+				}  
 			}
 		},
 		{
@@ -60,11 +101,12 @@
 			}
 		},
 		{
-			"path": "pages/demo/my/my",
+			"path": "pages/demo/map/map",
 			"style": {
-				"navigationBarTitleText": "我的"
+				"navigationBarTitleText": "地图"
 			}
 		}
+		
 	    
     ],
 	"globalStyle": {
@@ -85,7 +127,7 @@
 	        "selectedIconPath": "static/tabbar/index1.png",
 	        "text": "首页"
 	    }, {
-	        "pagePath": "pages/demo/slide/slide",
+	        "pagePath": "pages/demo/cate/cate",
 	        "iconPath": "static/tabbar/cate0.png",
 	        "selectedIconPath": "static/tabbar/cate1.png",
 	        "text": "分类"

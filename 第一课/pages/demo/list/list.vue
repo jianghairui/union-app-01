@@ -1,13 +1,22 @@
 <template>
-	<mescroll-body ref="mescrollRef" @init="mescrollInit" :down="downOption" :up="upOption" @down="downCallback" @up="upCallback">
+	<mescroll-body class="content" ref="mescrollRef" @init="mescrollInit" :down="downOption" :up="upOption" @down="downCallback" @up="upCallback">
 		<view class="notice">
 			<text>好货精选</text>
 		</view>
-		<view class="content">
+		<view class="goodsBox">
 			<view class="goodslist" v-for="(item ,index) in dataList" :key="index">
 				<image class="image" :src="image_url+item.pic" mode="aspectFill" />
-				<view class="title">{{item.name}}</view>
-				<view class="price">￥ {{item.price}}</view>
+				<view class="goods-desc">
+					<view class="title">{{item.name}}</view>
+					<view>
+						<text class="museum">
+							{{item.museum_name}}
+						</text>
+					</view>
+					<view>
+						￥ <text class="price">{{item.price}}</text>
+					</view>
+				</view>
 			</view>
 		</view>
 	</mescroll-body>
@@ -62,7 +71,7 @@
 			},
 			getnewsList(page=1,perpage=10,datalist=[]) { 
 				uni.request({
-					url: this.config.api_url + '/api/diyike/goodsList',
+					url: this.config.api_url + '/app/api/goodsList',
 					method: 'POST',
 					withCredentials: true,
 					data: {
@@ -83,6 +92,17 @@
 </script>
 
 <style>
+	
+	page {
+		background-color: #f8f8f8;
+	}
+	
+	.content {
+		/* #ifndef APP-PLUS-NVUE */
+		display: flex;
+		/* #endif */
+	}
+	
 	/*说明*/
 	.notice{
 		font-size: 30rpx;
@@ -91,24 +111,33 @@
 		text-align: center;
 	}
 	
-	.content {
+	.goodsBox {
 		/* #ifndef APP-PLUS-NVUE */
 		display: flex;
 		/* #endif */
 		/* flex-direction: column; */
 		flex-wrap: wrap;
-		/* align-items: center; */
-		/* justify-content: center; */
+		justify-content: space-between;
+		width: 720rpx;
+		margin-left: 15rpx;
 	}
 	
 	.goodslist {
-		width: 360rpx;
+		width: 350rpx;
 		font-size: 30rpx;
-		margin-top: 10rpx;
-		margin-left: 10rpx;
+		margin-top: 15rpx;
 		border-radius: 10rpx 10rpx;
 		overflow: hidden;
+		background-color: #FFFFFF;
 		/* background: #00FF00; */
+	}
+	
+	.goods-desc {
+		margin : 15rpx 0rpx 15rpx 15rpx ;
+	}
+	
+	.goods-desc view {
+		margin-bottom: 15rpx;
 	}
 	
 	.title {
@@ -123,12 +152,21 @@
 		overflow: hidden;
 	}
 	
+	.museum {
+		background-color: #FF5A5F;
+		font-size: 24rpx;
+		color: #FFFFFF;
+		text-align: center;
+		padding: 5rpx 15rpx 5rpx 15rpx;
+	}
+	
 	.price {
-		color: red;
+		font-size: 36rpx;
+		color: rgba(255,0,0,0.7);
 	}
 	
 	.image {
 		width: 100%;
-		height: 360rpx;
+		height: 350rpx;
 	}
 </style>

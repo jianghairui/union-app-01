@@ -54,7 +54,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background-color: #FF0000;
+		background-color: #f8f8f8;
 	}
 
 	.img {
