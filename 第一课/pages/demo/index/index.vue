@@ -1,15 +1,19 @@
 <template>
 	<mescroll-body class="content" ref="mescrollRef" @init="mescrollInit" :down="downOption" :up="upOption" @down="downCallback" @up="upCallback">
 		<view class="container">
+			<!-- 轮播图 -->
 			<uni-swiper-dot :info="slide" :current="current" mode="default" field="content">
 				<swiper class="swiper-box" @change="change" :autoplay="autoplay" :duration="duration" :interval="interval">
 					<swiper-item v-for="(item, index) in slide" :key="index">
-						<view class="swiper-item">
-							<image class="slide" :src="image_url+item.pic" mode="aspectFill" />
-						</view>
+						<navigator :url="item.url" hover-class="none">
+							<view class="swiper-item">
+								<image class="slide" :src="image_url+item.pic" mode="aspectFill" />
+							</view>
+						</navigator>
 					</swiper-item>
 				</swiper>
 			</uni-swiper-dot>
+			<!-- 商品分类 -->
 			<view class="catebox">
 				<view class="catelist" v-for="item in cateList">
 					<view>
@@ -21,11 +25,14 @@
 				</view>
 			</view>
 		</view>
+		
 		<view class="notice">
 			<text>好货精选</text>
 		</view>
+		<!-- 商品列表 -->
 		<view class="goodsBox">
 			<view class="goodslist" v-for="(item ,index) in dataList" :key="index">
+				<navigator :url="'/pages/demo/goods-detail/goods-detail?goods_id='+item.id" hover-class="none">
 				<image class="image" :src="image_url+item.pic" mode="aspectFill" />
 				<view class="goods-desc">
 					<view class="title">{{item.name}}</view>
@@ -38,6 +45,7 @@
 						￥ <text class="price">{{item.price}}</text>
 					</view>
 				</view>
+				</navigator>
 			</view>
 		</view>
 	</mescroll-body>
@@ -46,8 +54,10 @@
 <script>
 	import uniSection from '@/components/uni-section/uni-section.vue';
 	import uniSwiperDot from '@/components/uni-swiper-dot/uni-swiper-dot.vue';
-	import {apiSlideList,apiCateList,apiGoodsList} from "@/api/datalist.js";
+	import {apiSlideList} from "@/api/datalist.js";
+	import {apiCateList,apiGoodsList} from "@/api/shop.js";
 	import MescrollMixin from "@/components/mescroll-uni/mescroll-mixins.js";
+	
 	var _self;
 	export default {
 		mixins: [MescrollMixin],
@@ -110,6 +120,8 @@
 			},
 			/*下拉刷新的回调 */
 			downCallback() {
+				this.getSlideList();
+				this.getCateList();
 				this.dataList = [];
 				this.mescroll.resetUpScroll();
 			},

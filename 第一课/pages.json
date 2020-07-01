@@ -32,6 +32,12 @@
 			}
 		},
 		{
+			"path": "pages/demo/goods-detail/goods-detail",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
+		},
+		{
 			"path": "pages/demo/pay/pay",
 			"style": {
 				"navigationBarTitleText": "lesson 1"
