@@ -1,15 +1,13 @@
 <template>
 	<view class="container">
 		<view style="background:#FFF; padding:20rpx;">
-			<rich-text :nodes="htmlNodes"></rich-text>
+			<text class="iconfont icon-gouwuche2"></text>
 		</view>
 	</view>
 </template>
 
 <script>
 	
-	import htmlParser from '@/common/html-parser.js';
-	import {apiGoodsDetail} from "@/api/shop.js";
 	export default {
 		
 		data() {
@@ -20,7 +18,6 @@
 		},
 		onLoad(e) {
 			console.log(e)
-			this.htmlNodes = htmlParser(this.strings)
 		},
 		methods: {
 			

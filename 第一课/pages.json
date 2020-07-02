@@ -38,6 +38,24 @@
 			}
 		},
 		{
+			"path": "pages/demo/create-order/create-order",
+			"style": {
+				"navigationBarTitleText": "创建订单"
+			}
+		},
+		{
+			"path": "pages/demo/address/address",
+			"style": {
+				"navigationBarTitleText": "收货地址"
+			}
+		},
+		{
+			"path": "pages/demo/goods-list/goods-list",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
 			"path": "pages/demo/pay/pay",
 			"style": {
 				"navigationBarTitleText": "lesson 1"

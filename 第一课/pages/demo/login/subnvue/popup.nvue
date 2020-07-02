@@ -1,7 +1,11 @@
 <template>
 	<scroll-view class="content" scroll-y="true">
-		<button class="btn">手机号码一键登录</button>
-		<button class="btn btn2">手机验证码或密码</button>
+		<view class="btn">
+			<text class="text">账号密码登录</text>
+		</view>
+		<view class="btn btn2">
+			<text class="text">短信验证码登录</text>
+		</view>
 	</scroll-view>
 </template>
 
@@ -16,7 +20,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	.content {
 		width: 750rpx;
 		align-items: center;
@@ -26,10 +30,19 @@
 
 	.btn {
 		width: 500rpx;
+		height: 100rpx;
 		/* background-color: #000; */
 		background-color: rgba(255, 255, 255, 0.6);
 		border-radius: 50%;
 		margin-bottom: 15px;
+		align-items: center;
+		justify-content: center;
+		
+	}
+	
+	.text {
+		font-size: 40rpx;
+		color: #333333
 	}
 
 	.btn2 {
