@@ -15,13 +15,15 @@
 			</uni-swiper-dot>
 			<!-- 商品分类 -->
 			<view class="catebox">
-				<view class="catelist" v-for="item in cateList">
+				<view class="catelist" v-for="(item,index) in cateList" :key="'cate'+index">
+					<navigator :url="'/pages/demo/goods-list/goods-list?cate_id='+item.id+'&cate_name='+item.cate_name" hover-class="none">
 					<view>
 						<image :src="image_url+item.icon"></image>
 					</view>
 					<view>
 						<text>{{item.cate_name}}</text>
 					</view>
+					</navigator>
 				</view>
 			</view>
 		</view>
@@ -31,7 +33,7 @@
 		</view>
 		<!-- 商品列表 -->
 		<view class="goodsBox">
-			<view class="goodslist" v-for="(item ,index) in dataList" :key="index">
+			<view class="goodslist" v-for="(item ,index) in dataList" :key="'goodslist'+index">
 				<navigator :url="'/pages/demo/goods-detail/goods-detail?goods_id='+item.id" hover-class="none">
 				<image class="image" :src="image_url+item.pic" mode="aspectFill" />
 				<view class="goods-desc">

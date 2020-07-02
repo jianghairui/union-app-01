@@ -34,7 +34,7 @@ export function apiCateList(pageNum=1, pageSize=8) {
 }
 	
 // 获取商品列表
-export function apiGoodsList(pageNum, pageSize) {
+export function apiGoodsList(pageNum, pageSize,conditions={}) {
 	return new Promise((resolute, reject)=>{
 		try {
 			uni.request({
@@ -43,7 +43,8 @@ export function apiGoodsList(pageNum, pageSize) {
 				withCredentials: true,
 				data: {
 					page: pageNum,
-					perpage: pageSize
+					perpage: pageSize,
+					cate_id: conditions.cate_id
 				},
 				success: (res) => {
 					//接口请求成功

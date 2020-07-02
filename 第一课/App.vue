@@ -19,7 +19,7 @@
 </script>
 <style>
 	/*每个页面公共css */
-	/* page {
-		background-color: #ff0000;
-	} */
+	/* #ifndef APP-PLUS-NVUE */
+	@import url("/common/iconfont.css");
+	/* #endif */
 </style>
