@@ -98,3 +98,37 @@ export function apiGoodsDetail(goods_id) {
 		}
 	})
 }
+
+
+// 获取商品分类列表
+export function cateList(pageNum=1, pageSize=8) {
+	return new Promise((resolute, reject)=>{
+		try {
+			uni.request({
+				url: 'https://sd.wcip.net/api/test/cateList',
+				method: 'POST',
+				withCredentials: true,
+				data: {
+					page: pageNum,
+					perpage: pageSize
+				},
+				success: (res) => {
+					//接口请求成功
+					if(res.data.code == 1) {
+						resolute(res.data.data);
+					}else {
+						console.log(res.data.message);
+					}
+				},
+				fail: (msg) => {
+					console.log(msg,'fail -----');
+					reject(msg);
+				}
+			});
+		} catch (e) {
+			//接口请求失败
+			console.log(e,'catch -----');
+			reject(e);
+		}
+	})
+}
