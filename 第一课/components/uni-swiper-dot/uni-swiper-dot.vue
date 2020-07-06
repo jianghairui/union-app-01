@@ -14,7 +14,7 @@
 		    'width':(index === current? dots.width*3:dots.width ) + 'px','height':dots.height +'px' ,'background-color':index !== current?dots.backgroundColor:dots.selectedBackgroundColor,'border':index !==current ? dots.border:dots.selectedBorder}" :key="index" class="uni-swiper__dots-item " />
 		</view>
 		<view v-if="mode === 'nav'" key='nav' :style="{'background-color':dotsStyles.backgroundColor,'bottom':'0'}" class="uni-swiper__dots-box uni-swiper__dots-nav">
-			<text :style="{'color':dotsStyles.color}" class="uni-swiper__dots-nav-item">{{ (current+1)+"/"+info.length +' ' +info[current][field] }}</text>
+			<text :style="{'color':dotsStyles.color}" class="uni-swiper__dots-nav-item">{{ (current+1)+"/"+info.length}}</text>
 		</view>
 		<view v-if="mode === 'indexes'" key='indexes' :style="{'bottom':dots.bottom + 'px'}" class="uni-swiper__dots-box">
 			<view v-for="(item,index) in info" :style="{
@@ -39,7 +39,7 @@
 	 * @property {Object} dotsStyles 指示点样式
 	 * @event {Function} clickItem 组件触发点击事件时触发，e={currentIndex}
 	 */
-
+// {{ (current+1)+"/"+info.length +' ' +info[current][field] }}    NAV中初始样式
 	export default {
 		name: 'UniSwiperDot',
 		props: {
@@ -167,7 +167,7 @@
 		/* #endif */
 		flex: 1;
 		flex-direction: row;
-		justify-content: flex-start;
+		justify-content: flex-end;
 		align-items: center;
 		background-color: rgba(0, 0, 0, 0.2);
 	}
@@ -178,6 +178,7 @@
     white-space: nowrap; */
 		font-size: 28rpx;
 		color: #fff;
+		/* color: #601366; */
 		margin: 0 15px;
 	}
 
