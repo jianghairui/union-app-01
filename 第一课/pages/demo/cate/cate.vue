@@ -17,7 +17,6 @@
 </template>
 
 <script>
-	import jsondata from '../../../Json.js';
 	import {cateList} from "@/api/shop.js";
 	
 	export default {
@@ -25,14 +24,14 @@
 			return {
 				sizeCalcState: false,
 				tabScrollTop: 0,
-				currentId: 1,
+				currentId: 0,
 				llist: [],
 				rlist: [],
 				image_url: ''
 			}
 		},
 		onLoad(){
-			this.image_url = 'https://qiniu.wcip.net/';
+			this.image_url = 'https://qiniu.sd.wcip.net/';
 			this.loadData();//加载分类数据333
 		},
 		methods: {
@@ -40,26 +39,16 @@
 				cateList().then(data => {
 					console.log(data,'methods')
 					this.llist = data;
+					this.rlist = data[0].child;
+					this.currentId = data[0].id;
 				}).catch((e)=> {
 					
 				})
-				
-				
-				// let list = await this.$api.json('cateList');https://qiniu.wcip.net/upload/goodscate/156706105441827200779.jpg
-				// let list = jsondata.cateList;
-				// list.forEach(item=>{
-				// 	if(!item.pid){
-				// 		this.flist.push(item);  //pid为父级id, 没有pid或者pid=0是一级分类
-				// 	}else if(!item.picture){
-				// 		this.slist.push(item); //没有图的是2级分类
-				// 	}else{
-				// 		this.tlist.push(item); //3级分类
-				// 	}
-				// }) 
 			},
 			//一级分类点击
 			tabtap(item){
 				this.rlist = item.child;
+				this.currentId = item.id;
 			},
 			//右侧栏滚动
 			asideScroll(e){

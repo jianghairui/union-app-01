@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<!-- 轮播图 -->
-		<uni-swiper-dot :info="pics" :current="current" mode="default" field="content">
+		<uni-swiper-dot :info="pics" :current="current" mode="nav" field="content">
 			<swiper class="swiper-box" @change="change" :autoplay="autoplay" :duration="duration" :interval="interval">
 				<swiper-item v-for="(item, index) in pics" :key="index">
 					<view class="swiper-item">
@@ -155,7 +155,6 @@
 			_self = this;
 			_self.image_url = this.config.image_url;
 			this.getGoodsDetail(e.goods_id);
-			
 		},
 		methods: {
 			change(e) {
@@ -168,6 +167,14 @@
 					var goods_detail = this.func.src_replace(data.detail);
 					this.htmlNodes = htmlParser(goods_detail);
 					this.goods_name = data.name;
+					
+					var array = [];
+					data.pics.forEach(function(item,index) {
+						var obj = {};
+						obj.pic = item;
+						obj.content = '123';
+						array.push(obj);
+					})
 					this.pics = data.pics;
 					this.specChildList = data.attr_list;
 					this.origin_price = data.origin_price;
