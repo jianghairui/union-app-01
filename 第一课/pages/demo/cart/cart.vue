@@ -16,6 +16,7 @@
 </template>
 
 <script>
+	
 	export default {
 		data() {
 			return {
@@ -35,12 +36,26 @@
 			}
 		},
 		onLoad() {
-			 console.log('购物车onLoad');
+			 console.log(plus.runtime.version);
 		},
 		methods: {
-			test: function(e) {
-				console.log(f);
+			test(e) {
+				console.log(plus);
 			}
+			// plusReady(){  
+			// 	var wgtVer=null;
+			// 	// ......  
+			// 	// 获取本地应用资源版本号  
+			// 	plus.runtime.getProperty(plus.runtime.appid,function(inf){  
+			// 		wgtVer=inf.version;  
+			// 		console.log("当前应用版本："+wgtVer);  
+			// 	});  
+			// }  
+			// if(window.plus){  
+			// 	plusReady();  
+			// }else{  
+			// 	document.addEventListener('plusready',plusReady,false);  
+			// }
 		}
 		
 	}
