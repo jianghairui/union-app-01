@@ -1,0 +1,178 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
+		{
+			"path": "pages/demo/index/index",
+			"style": {
+				"navigationBarTitleText": "博物馆商店"
+			}
+		},
+		{
+			"path": "pages/demo/cate/cate",
+			"style": {
+				"navigationBarTitleText": "分类"
+			}
+		},
+		{
+			"path": "pages/demo/cate/cate2",
+			"style": {
+				"navigationBarTitleText": "分类"
+			}
+		},
+		{
+			"path": "pages/demo/cart/cart",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		},
+		{
+			"path": "pages/demo/my/my",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/demo/mynote/mynote",
+			"style": {
+				"navigationBarTitleText": "lessons"
+			}
+		},
+		{
+			"path": "pages/demo/goods-detail/goods-detail",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
+		},
+		{
+			"path": "pages/demo/create-order/create-order",
+			"style": {
+				"navigationBarTitleText": "创建订单"
+			}
+		},
+		{
+			"path": "pages/demo/address/address",
+			"style": {
+				"navigationBarTitleText": "收货地址"
+			}
+		},
+		{
+			"path": "pages/demo/goods-list/goods-list",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/demo/pay/pay",
+			"style": {
+				"navigationBarTitleText": "lesson 1"
+			}
+		},
+		{
+			"path": "pages/demo/list/list",
+			"style": {
+				"navigationBarTitleText": "商品列表",
+				"app-plus": {
+					"animationType": "fade-in"
+				}
+			}
+		},
+		{
+			"path": "pages/demo/video/video",
+			"style": {
+				"navigationBarTitleText": "lesson 3",
+				"app-plus": {  
+					"animationType": "fade-in",
+					"subNVues":[{  
+						"id": "popup", // 唯一标识  
+						"path": "pages/demo/video/subnvue/popup", // 页面路径  
+						/*"type": "popup",  这里不需要*/  
+						"style": {  
+							"position": "absolute",  
+							"dock": "right",  
+							"width": "100upx",  
+							"height": "150upx",  
+							"background": "transparent"  
+						}  
+					}]  
+				}  
+			}
+		},
+		{
+			"path": "pages/demo/login/login",
+			"style": {
+				"navigationBarTitleText": "账号登录",
+				"app-plus": {  
+					"animationType": "fade-in",
+					"subNVues":[{  
+						"id": "popup", // 唯一标识  
+						"path": "pages/demo/login/subnvue/popup", // 页面路径  
+						/*"type": "popup",  这里不需要*/  
+						"style": {  
+							"position": "absolute",  
+							"dock": "right",  
+							"width": "100upx",  
+							"height": "150upx",  
+							"background": "transparent"  
+						}  
+					}]  
+				}  
+			}
+		},
+		{
+			"path": "pages/demo/test/test",
+			"style": {
+				"navigationBarTitleText": "测试页"
+			}
+		},
+		{
+			"path": "pages/demo/slide/slide",
+			"style": {
+				"navigationBarTitleText": "分类"
+			}
+		},
+		{
+			"path": "pages/demo/map/map",
+			"style": {
+				"navigationBarTitleText": "地图"
+			}
+		}
+		
+	    
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#1296DB",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/demo/index/index",
+	        "iconPath": "static/tabbar/index0.png",
+	        "selectedIconPath": "static/tabbar/index1.png",
+	        "text": "首页"
+	    }, {
+	        "pagePath": "pages/demo/cate/cate2",
+	        "iconPath": "static/tabbar/cate0.png",
+	        "selectedIconPath": "static/tabbar/cate1.png",
+	        "text": "分类"
+	    },
+		{
+		    "pagePath": "pages/demo/cart/cart",
+		    "iconPath": "static/tabbar/cart0.png",
+		    "selectedIconPath": "static/tabbar/cart1.png",
+		    "text": "购物车"
+		},
+		{
+		    "pagePath": "pages/demo/my/my",
+		    "iconPath": "static/tabbar/my0.png",
+		    "selectedIconPath": "static/tabbar/my1.png",
+		    "text": "我的"
+		}]
+	}
+}

@@ -1,0 +1,51 @@
+<template>
+	<scroll-view class="content" scroll-y="true">
+		<view class="btn">
+			<text class="text">账号密码登录</text>
+		</view>
+		<view class="btn btn2">
+			<text class="text">短信验证码登录</text>
+		</view>
+	</scroll-view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				imageUl: '@/static/fox.png',
+				videoUrl: ''
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.content {
+		width: 750rpx;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	.btn {
+		width: 500rpx;
+		height: 100rpx;
+		/* background-color: #000; */
+		background-color: rgba(255, 255, 255, 0.6);
+		border-radius: 50%;
+		margin-bottom: 15px;
+		align-items: center;
+		justify-content: center;
+		
+	}
+	
+	.text {
+		font-size: 40rpx;
+		color: #333333
+	}
+
+	.btn2 {
+		background-color: rgba(255, 255, 255, 0.4);
+	}
+</style>
