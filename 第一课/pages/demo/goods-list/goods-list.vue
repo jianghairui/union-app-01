@@ -62,8 +62,10 @@
 		methods: {
 			/*下拉刷新的回调 */
 			downCallback() {
-				this.dataList = [];
-				this.mescroll.resetUpScroll();
+				setTimeout(function() {
+					_self.dataList = [];
+					_self.mescroll.resetUpScroll();
+				},1500);
 			},
 			/*上拉加载的回调: 其中page.num:当前页 从1开始, page.size:每页数据条数,默认10 */
 			upCallback(page) {

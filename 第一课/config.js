@@ -1,5 +1,5 @@
 let config= {
-	image_url: 'https://shop.bwg.art/',
+	image_url: 'https://qiniu.bwg.art/',
 	// #ifdef APP-PLUS
 	api_url: 'https://shop.bwg.art/',
 	// #endif

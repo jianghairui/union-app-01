@@ -5,11 +5,11 @@
 				{{item.cate_name}}
 			</view>
 		</scroll-view>
-		<scroll-view scroll-with-animation scroll-y class="right-aside" @scroll="asideScroll" :scroll-top="tabScrollTop">
+		<scroll-view scroll-with-animation scroll-y class="right-aside" @scroll="asideScroll" :scroll-top="scrollTop">
 			<view class="t-list">
-				<view @click="navToList(item.id, titem.id)" class="t-item" v-for="titem in rlist" :key="titem.id">
-					<image :src="image_url + titem.icon"></image>
-					<text>{{titem.cate_name}}</text>
+				<view @click="navToList(titem.id)" class="t-item" v-for="titem in rlist" :key="titem.id">
+					<image :src="image_url + titem.pic"></image>
+					<text>{{titem.name}}</text>
 				</view>
 			</view>
 		</scroll-view>
@@ -17,13 +17,15 @@
 </template>
 
 <script>
-	import {cateList} from "@/api/shop.js";
+	import {apiCateList,apiGoodsList} from "@/api/shop.js";
 	
 	export default {
 		data() {
 			return {
 				sizeCalcState: false,
-				tabScrollTop: 0,
+				loading: false,
+				scrollTop: 0,
+				old_scrollTop: 0,
 				currentId: 0,
 				llist: [],
 				rlist: [],
@@ -31,32 +33,57 @@
 			}
 		},
 		onLoad(){
-			this.image_url = 'https://qiniu.sd.wcip.net/';
-			this.loadData();//加载分类数据333
+			// this.image_url = 'https://qiniu.sd.wcip.net/';
+			this.image_url = this.config.image_url;
+			this.getCateList();//加载分类数据333
 		},
 		methods: {
-			loadData(){
-				cateList().then(data => {
-					// console.log(data,'methods')
+			getCateList() {
+				apiCateList(1,50).then(data => {
+					// console.log(data,'getCateList');
+					if(data.length > 0) {
+						var conditions = {
+							cate_id: data[0].id
+						};
+						this.getGoodsList(conditions);
+					}
 					this.llist = data;
-					this.rlist = data[0].child;
 					this.currentId = data[0].id;
+				}).catch((e)=> {
+					
+				})
+			},
+			getGoodsList(conditions) {
+				apiGoodsList(1,50,conditions).then(data => {
+					// console.log(data,'getGoodsList');
+					this.rlist = data;
+					this.scrollTop = this.old_scrollTop;
+					this.$nextTick(function() {
+						this.scrollTop = 0;
+					});
+					this.loading = false;
 				}).catch((e)=> {
 					
 				})
 			},
 			//一级分类点击
 			tabtap(item){
-				this.rlist = item.child;
-				this.currentId = item.id;
+				if(!this.loading) {
+					this.loading = true;
+					this.currentId = item.id;
+					var conditions = {
+						cate_id: item.id
+					};
+					this.getGoodsList(conditions);
+				}
 			},
 			//右侧栏滚动
 			asideScroll(e){
-				
+				this.old_scrollTop = e.detail.scrollTop
 			},
-			navToList(sid, tid){
+			navToList(goods_id){
 				uni.navigateTo({
-					url: `/pages/product/list?fid=${this.currentId}&sid=${sid}&tid=${tid}`
+					url: '/pages/demo/goods-detail/goods-detail?goods_id=' + goods_id
 				})
 			}
 		}
@@ -120,7 +147,7 @@
 	.t-item{
 		flex-shrink: 0;
 		/* flex: 1; */
-		width: 33.33%;
+		width: 50%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -129,14 +156,17 @@
 		color: #666;
 		padding-bottom: 20rpx;
 		image{
-			width: 140rpx;
-			height: 140rpx;
+			width: 225rpx;
+			height: 225rpx;
+			border-radius: 10rpx;
+			margin-bottom: 10rpx;
 		}
 		text {
 			text-align: center;
-			width: 150rpx;
+			width: 230rpx;
 			white-space: nowrap;
 			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 	}
 </style>

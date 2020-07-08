@@ -167,14 +167,6 @@
 					var goods_detail = this.func.src_replace(data.detail);
 					this.htmlNodes = htmlParser(goods_detail);
 					this.goods_name = data.name;
-					
-					var array = [];
-					data.pics.forEach(function(item,index) {
-						var obj = {};
-						obj.pic = item;
-						obj.content = '123';
-						array.push(obj);
-					})
 					this.pics = data.pics;
 					this.specChildList = data.attr_list;
 					this.origin_price = data.origin_price;

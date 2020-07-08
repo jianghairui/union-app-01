@@ -14,6 +14,12 @@
 			}
 		},
 		{
+			"path": "pages/demo/cate/cate2",
+			"style": {
+				"navigationBarTitleText": "分类"
+			}
+		},
+		{
 			"path": "pages/demo/cart/cart",
 			"style": {
 				"navigationBarTitleText": "购物车"
@@ -151,7 +157,7 @@
 	        "selectedIconPath": "static/tabbar/index1.png",
 	        "text": "首页"
 	    }, {
-	        "pagePath": "pages/demo/cate/cate",
+	        "pagePath": "pages/demo/cate/cate2",
 	        "iconPath": "static/tabbar/cate0.png",
 	        "selectedIconPath": "static/tabbar/cate1.png",
 	        "text": "分类"

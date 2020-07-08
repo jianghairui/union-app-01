@@ -2,9 +2,9 @@
     <view class="container">  
 		<view class="user-section">
 			<view class="bg"></view>
-			<view class="user-info-box">
+			<view class="user-info-box" @click="login">
 				<view class="portrait-box">
-					<image class="portrait" src="/static/missing-face.png"></image>
+					<image class="portrait" :src="avatar"></image>
 				</view>
 				<view class="info-box">
 					<text class="username">点击登录</text>
@@ -107,14 +107,18 @@
     export default {
 		data(){
 			return {
-				moving: false,
+				avatar: '/static/missing-face.png'
 			}
 		},
 		onLoad(){
 			
 		},
         methods: {
-			
+			login() {
+				uni.navigateTo({
+					url: '/pages/demo/login/login'
+				})
+			}
         }  
     }  
 </script>  
@@ -147,9 +151,9 @@
 		position:relative;
 		z-index: 1;
 		.portrait{
-			width: 130upx;
-			height: 130upx;
-			border:5upx solid #fff;
+			width: 130rpx;
+			height: 130rpx;
+			border:5rpx solid #fff;
 			border-radius: 50%;
 		}
 		.username{
