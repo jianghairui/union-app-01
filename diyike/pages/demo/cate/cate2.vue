@@ -57,10 +57,6 @@
 				apiGoodsList(1,50,conditions).then(data => {
 					// console.log(data,'getGoodsList');
 					this.rlist = data;
-					this.scrollTop = this.old_scrollTop;
-					this.$nextTick(function() {
-						this.scrollTop = 0;
-					});
 					this.loading = false;
 				}).catch((e)=> {
 					
@@ -70,11 +66,15 @@
 			tabtap(item){
 				if(!this.loading) {
 					this.loading = true;
-					this.currentId = item.id;
-					var conditions = {
-						cate_id: item.id
-					};
-					this.getGoodsList(conditions);
+					this.scrollTop = this.old_scrollTop;
+					this.$nextTick(function() {
+						this.scrollTop = 0;
+						this.currentId = item.id;
+						var conditions = {
+							cate_id: item.id
+						};
+						this.getGoodsList(conditions);
+					});
 				}
 			},
 			//右侧栏滚动
