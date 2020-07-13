@@ -1,5 +1,4 @@
 .idea
 */manifest.json
 */unpackage/dist/dev/app-plus/manifest.json
-*/unpackage/dist/buildd/app-plus/manifest.json
-/uni-component/
+*/unpackage/dist/build/app-plus/manifest.json
